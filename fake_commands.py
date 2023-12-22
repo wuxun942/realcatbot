@@ -14,8 +14,9 @@ actions = {
     "stick": '{from_user_name} 贴贴了 {target_user_name}!',
     "ban": '{target_user_name} 已被管理员永久封禁！',
     "unban": '{target_user_name} 已解封！',
-    "kick": '{target_user_name} 已被管理员永久踢出！',
-    "csn": '{from_user_name} 抱着 {target_user_name} 一顿c！'
+    "kick": '{target_user_name} 已被管理员踢出！',
+    "csn": '{from_user_name} 抱着 {target_user_name} 一顿c!',
+    "hug": '{from_user_name} 紧紧抱住了 {target_user_name}!'
 }
 
 
