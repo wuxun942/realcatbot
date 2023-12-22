@@ -10,6 +10,8 @@ from telegram import Update
 from telegram.constants import ChatType
 from telegram.ext import ApplicationBuilder, AIORateLimiter, ContextTypes, MessageHandler, filters, CommandHandler
 
+from collections import defaultdict
+
 from fake_commands import fake_command
 from message_count import message_count_warning_users, scores, scores_randomslist, msgcount
 from plusminus import plus_or_minus
