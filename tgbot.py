@@ -71,6 +71,18 @@ async def scores_list(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('\n'.join(header))
 
 
+async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    header = ["~~才不会告诉你具体用法呢~~\n",
+              "请用 +/-/! 开头的command回复一条信息",
+              "可选择的(调戏东喵)形式：",
+              "+数字 名词(选填)",
+              "-数字 名词(选填)",
+              "!特定动作",
+              "!动作1 动作2",
+              "特定动作: kiss, mua, rua, bia, bite, stick, ban, unban, kick, csn, hug"]
+    await update.message.reply_text('\n'.join(header))
+
+
 async def recv(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.message
     msg_user = get_message_username(msg)
@@ -89,14 +101,14 @@ async def recv(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await plus_or_minus(update, context)
     elif msg.text.startswith("!") or msg.text.startswith("！"):
         await fake_command(update, context)
-        # else:
-        #     random_message = random.choice(random_message_list)
-        #     if msg_user not in lastjoke:
-        #         lastjoke[msg_user] = random_message
-        #     else:
-        #         while lastjoke[msg_user] == random_message:
-        #             random_message = random.choice(random_message_list)
-        #     await update.message.reply_text(f'{msg_user}{random_message}')
+    # else:
+    #     random_message = random.choice(random_message_list)
+    #     if msg_user not in lastjoke:
+    #         lastjoke[msg_user] = random_message
+    #     else:
+    #         while lastjoke[msg_user] == random_message:
+    #             random_message = random.choice(random_message_list)
+    #     await update.message.reply_text(f'{msg_user}{random_message}')
 
 
 def main():
@@ -121,10 +133,12 @@ def main():
     disable_message_count_warning_handler = CommandHandler('disable_message_count_warning',
                                                            callback=disable_message_count_warning)
     scores_list_handler = CommandHandler('scores_list', callback=scores_list)
+    help_handler = CommandHandler('help', callback=help)
     application.add_handler(msg_recv_handler)
     application.add_handler(enable_message_count_warning_handler)
     application.add_handler(disable_message_count_warning_handler)
     application.add_handler(scores_list_handler)
+    application.add_handler(help_handler)
 
     bot_secret_id = random_id_generator(32)
     logging.getLogger('Bot').warning(f'Bot running with random ID "{bot_secret_id}"')
