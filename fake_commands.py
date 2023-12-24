@@ -17,7 +17,7 @@ actions = {
     "kick": '{target_user_name} 已被管理员永久踢出！',
     "csn": '{from_user_name} 抱着 {target_user_name} 一顿c！',
     "apple": '{from_user_name} 送给 {target_user_name} 一个苹果！',
-    "hug": '{from_user_name} 紧紧抱住了 {target_user_name}！'
+    "hug": '{from_user_name} 紧紧地抱住了 {target_user_name}！'
 }
 
 
