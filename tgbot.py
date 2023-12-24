@@ -101,14 +101,14 @@ async def recv(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await plus_or_minus(update, context)
     elif msg.text.startswith("!") or msg.text.startswith("！"):
         await fake_command(update, context)
-    # else:
-    #     random_message = random.choice(random_message_list)
-    #     if msg_user not in lastjoke:
-    #         lastjoke[msg_user] = random_message
-    #     else:
-    #         while lastjoke[msg_user] == random_message:
-    #             random_message = random.choice(random_message_list)
-    #     await update.message.reply_text(f'{msg_user}{random_message}')
+        # else:
+        #     random_message = random.choice(random_message_list)
+        #     if msg_user not in lastjoke:
+        #         lastjoke[msg_user] = random_message
+        #     else:
+        #         while lastjoke[msg_user] == random_message:
+        #             random_message = random.choice(random_message_list)
+        #     await update.message.reply_text(f'{msg_user}{random_message}')
 
 
 def main():
